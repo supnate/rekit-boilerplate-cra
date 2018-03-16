@@ -28,6 +28,10 @@ export class SidePanel extends Component {
             <Link to="/">Back to start page</Link>
           </li>
         </ul>
+        <div className="memo">
+          This is a Rekit feature that contains some examples for you to quick learn how Rekit works. To remove it just
+          delete the feature.
+        </div>
       </div>
     );
   }

@@ -24,4 +24,5 @@
 * Now style should work.
 * Edit component `home/DefaultPage` to show get started for Rekit Studio.
 * Install `axios`.
-* Add examples feature
+* Add examples feature.
+* Install `redux-logger`.
