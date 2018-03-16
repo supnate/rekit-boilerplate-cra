@@ -1,66 +1,69 @@
 @import '../../styles/mixins';
 
 .home-default-page {
-  line-height: 160%;
-  position: relative;
+  text-align: center;
+  .app {
+    text-align: center;
+  }
 
   .app-logo {
+    animation: app-logo-spin infinite 10s linear;
+    height: 80px;
+  }
+
+  .rekit-logo {
     position: absolute;
-    top: -18px;
-    left: -10px;
-    width: 60px;
+    left: 0px;
+    top: 0px;
+    opacity: 0.08;
+    height: 190px;
   }
 
-  h1 {
-    padding-left: 60px;
-    margin-bottom: 30px;
+  .app-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+    overflow: hidden;
+    position: relative;
   }
 
-  h3 {
+  .app-title {
+    font-size: 1.5em;
+  }
+
+  .app-intro {
+    font-size: large;
+  }
+
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
     margin-top: 20px;
   }
-
-  ul.cmd {
-    margin: 10px 15px 0;
-    color: #666;
-    font-family: 'Courier New';
-  }
-
-  p {
-    margin-top: 20px;
-  }
-
-  .section-title {
-    padding: 5px 10px;
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-  }
-
-  .demo-count {
-    padding-top: 10px;
-    label {
-      color: green;
-      margin-left: 10px;
-    }
-    button {
-      margin-left: 10px;
-    }
-  }
-
-  .demo-reddit {
+  li {
     margin-top: 10px;
-    padding-left: 10px;
+  }
 
-    button {
-      margin-bottom: 10px;
+  a {
+    color: #0288d1;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
     }
   }
 
-  .fetch-list-error {
-    color: red;
-  }
-
-  .home-reddit-list {
-    margin-bottom: 100px;
+  @keyframes app-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
