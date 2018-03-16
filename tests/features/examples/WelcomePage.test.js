@@ -1,20 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import { HelloPage } from 'src/features/examples/HelloPage';
+import { WelcomePage } from 'src/features/examples/WelcomePage';
 
-describe('examples/HelloPage', () => {
+describe('examples/WelcomePage', () => {
   it('renders node with correct class name', () => {
     const props = {
       examples: {},
       actions: {},
     };
     const renderedComponent = shallow(
-      <HelloPage {...props} />
+      <WelcomePage {...props} />
     );
 
     expect(
-      renderedComponent.find('.examples-hello-page').getElement()
+      renderedComponent.find('.examples-welcome-page').getElement()
     ).to.exist;
   });
 });

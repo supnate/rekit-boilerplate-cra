@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import reactLogo from '../../images/react-logo.svg';
 import rekitLogo from '../../images/rekit-logo.svg';
 import * as actions from './redux/actions';
@@ -21,13 +22,6 @@ export class DefaultPage extends Component {
           <h1 className="app-title">Welcome to React</h1>
         </header>
         <div className="app-intro">
-          <p>
-            Rekit Studio is running at:{' '}
-            <a href="http://localhost:6076/" target="_blank" rel="noopener noreferrer">
-              http://localhost:6076/
-            </a>{' '}
-            by default.
-          </p>
           <h3>To get started:</h3>
           <ul>
             <li>
@@ -50,9 +44,27 @@ export class DefaultPage extends Component {
               >
                 src/features/home/App.js
               </a>{' '}
-              for the main layout.
+              for the root container layout.
+            </li>
+            <li>
+              To see examples, access:&nbsp;
+              <Link to="/examples">/examples</Link>
+            </li>
+            <li>
+              Rekit Studio is running at:&nbsp;
+              <a href="http://localhost:6076/" target="_blank" rel="noopener noreferrer">
+                http://localhost:6076/
+              </a>.
             </li>
           </ul>
+          {null && (
+            <p className="memo">
+              There are examples grouped in a feature named "examples". They show how to use Rekit to manage Redux sync
+              and async actions. To remove examples, go to Rekit Studio and right click the "examples" feature, then
+              click "Delete" menu item. Alternatively you can run command "rekit remove feature examples" via command
+              line under the project folder.
+            </p>
+          )}
         </div>
       </div>
     );

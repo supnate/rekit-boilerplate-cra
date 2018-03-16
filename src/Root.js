@@ -7,7 +7,7 @@ import { Switch, Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 import history from './common/history';
 
-function renderRouteConfigV3(Container, routes, contextPath) {
+function renderRouteConfigV3(routes, contextPath) {
   // Resolve route config object in React Router v3.
   const children = []; // children component list
 
@@ -20,7 +20,14 @@ function renderRouteConfigV3(Container, routes, contextPath) {
     }
     newContextPath = newContextPath.replace(/\/+/g, '/');
     if (item.component && item.childRoutes) {
-      children.push(renderRouteConfigV3(item.component, item.childRoutes, newContextPath));
+      const childRoutes = renderRouteConfigV3(item.childRoutes, newContextPath);
+      children.push(
+        <Route
+          key={newContextPath}
+          render={props => <item.component {...props}>{childRoutes}</item.component>}
+          path={newContextPath}
+        />
+      );
     } else if (item.component) {
       children.push(<Route key={newContextPath} component={item.component} path={newContextPath} exact />);
     } else if (item.childRoutes) {
@@ -30,16 +37,8 @@ function renderRouteConfigV3(Container, routes, contextPath) {
 
   routes.forEach(item => renderRoute(item, contextPath));
 
-  // Use Switch as the default container by default
-  if (!Container) return <Switch>{children}</Switch>;
-
-  return (
-    <Container key={contextPath}>
-      <Switch>
-        {children}
-      </Switch>
-    </Container>
-  );
+  // Use Switch so that only the first matched route is rendered.
+  return <Switch>{children}</Switch>;
 }
 
 export default class Root extends React.Component {
@@ -48,14 +47,11 @@ export default class Root extends React.Component {
     routeConfig: PropTypes.array.isRequired,
   };
   render() {
-    const children = renderRouteConfigV3(null, this.props.routeConfig, '/');
+    const children = renderRouteConfigV3(this.props.routeConfig, '/');
     return (
       <Provider store={this.props.store}>
-        <ConnectedRouter history={history}>
-          {children}
-        </ConnectedRouter>
+        <ConnectedRouter history={history}>{children}</ConnectedRouter>
       </Provider>
     );
   }
 }
-

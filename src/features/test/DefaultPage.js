@@ -4,16 +4,16 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 
-export class HelloPage extends Component {
+export class DefaultPage extends Component {
   static propTypes = {
-    examples: PropTypes.object.isRequired,
+    test: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
   };
 
   render() {
     return (
-      <div className="examples-hello-page">
-        Page Content: examples/HelloPage
+      <div className="test-default-page">
+        Page Content: test/DefaultPage
       </div>
     );
   }
@@ -22,7 +22,7 @@ export class HelloPage extends Component {
 /* istanbul ignore next */
 function mapStateToProps(state) {
   return {
-    examples: state.examples,
+    test: state.test,
   };
 }
 
@@ -36,4 +36,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HelloPage);
+)(DefaultPage);

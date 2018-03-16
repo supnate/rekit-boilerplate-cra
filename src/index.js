@@ -25,4 +25,8 @@ if (module.hot) {
     const nextRouteConfig = require('./common/routeConfig').default; // eslint-disable-line
     renderApp(<Root store={store} routeConfig={nextRouteConfig} />);
   });
+  module.hot.accept('./Root', () => {
+    const nextRoot = require('./Root').default; // eslint-disable-line
+    renderApp(<Root store={store} routeConfig={routeConfig} />);
+  });
 }

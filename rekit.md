@@ -12,7 +12,7 @@
 * Start Rekit Studio by `npm run start-studio`.
 * Remove `styles/reset.less` because it conflicts with UI libraries like `ant.design`.
 * Edit `src/index.js` to use Rekit's one.
-* Add `react-hot-loader`, `react-router-dom`, `redux`, `redux-thunk`, `react-redux`, `react-router-redux@next`.
+* Install `react-hot-loader`, `react-router-dom`, `redux`, `redux-thunk`, `react-redux`, `react-router-redux@next`.
 * Should show "Hello Rekit!" at http://localhost:3000 .
 * Copy content of `src/App.js` to `src/features/home/DefaultPage.js`.
 * Move `src/logo.svg` to `src/images/react-logo.svg`.
@@ -23,4 +23,5 @@
 * Edit `config/webpack.config.dev.js` to add `less-loader`.
 * Now style should work.
 * Edit component `home/DefaultPage` to show get started for Rekit Studio.
+* Install `axios`.
 * Add examples feature

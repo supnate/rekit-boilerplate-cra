@@ -13,7 +13,16 @@ export class CounterPage extends Component {
   render() {
     return (
       <div className="examples-counter-page">
-        Page Content: examples/CounterPage
+        <h1>Counter</h1>
+        <p>This is simple counter demo to show how Redux sync actions work.</p>
+        <button onClick={this.props.actions.counterMinusOne} disabled={this.props.examples.count === 0}>
+          -
+        </button>
+        <span>{this.props.examples.count}</span>
+        <button onClick={this.props.actions.counterPlusOne}>+</button>
+        <button onClick={this.props.actions.counterReset} className="btn-reset">
+          Reset
+        </button>
       </div>
     );
   }
@@ -29,11 +38,8 @@ function mapStateToProps(state) {
 /* istanbul ignore next */
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({ ...actions }, dispatch)
+    actions: bindActionCreators({ ...actions }, dispatch),
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CounterPage);
+export default connect(mapStateToProps, mapDispatchToProps)(CounterPage);

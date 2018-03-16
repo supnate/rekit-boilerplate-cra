@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
@@ -13,7 +14,20 @@ export class SidePanel extends Component {
   render() {
     return (
       <div className="examples-side-panel">
-        Page Content: examples/SidePanel
+        <ul>
+          <li>
+            <Link to="/examples">Welcome</Link>
+          </li>
+          <li>
+            <Link to="/examples/counter">Counter Demo</Link>
+          </li>
+          <li>
+            <Link to="/examples/reddit">Reddit API Demo</Link>
+          </li>
+          <li>
+            <Link to="/">Back to start page</Link>
+          </li>
+        </ul>
       </div>
     );
   }
@@ -29,11 +43,8 @@ function mapStateToProps(state) {
 /* istanbul ignore next */
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({ ...actions }, dispatch)
+    actions: bindActionCreators({ ...actions }, dispatch),
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SidePanel);
+export default connect(mapStateToProps, mapDispatchToProps)(SidePanel);
