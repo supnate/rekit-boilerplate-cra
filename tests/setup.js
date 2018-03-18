@@ -11,4 +11,3 @@ if (process.env.NODE_ENV === 'test') {
   axios.defaults.baseURL = 'http://localhost';
   axios.defaults.adapter = httpAdapter;
 }
-
