@@ -11,6 +11,16 @@ describe('examples/RedditListPage', () => {
     const renderedComponent = shallow(<RedditListPage {...props} />);
 
     expect(renderedComponent.find('.examples-reddit-list-page').length).toBe(1);
+    expect(renderedComponent.find('.no-items-tip').length).toBe(1);
+  });
+  it("renders list items when there's data", () => {
+    const props = {
+      examples: { redditList: [{ data: { id: 'id', title: 'title', url: 'url' } }] },
+      actions: {},
+    };
+    const renderedComponent = shallow(<RedditListPage {...props} />);
+
+    expect(renderedComponent.find('.examples-reddit-list-page').length).toBe(1);
   });
 
   it('should disable fetch button when fetching reddit', () => {

@@ -57,14 +57,6 @@ export class DefaultPage extends Component {
               </a>.
             </li>
           </ul>
-          {null && (
-            <p className="memo">
-              There are examples grouped in a feature named "examples". They show how to use Rekit to manage Redux sync
-              and async actions. To remove examples, go to Rekit Studio and right click the "examples" feature, then
-              click "Delete" menu item. Alternatively you can run command "rekit remove feature examples" via command
-              line under the project folder.
-            </p>
-          )}
         </div>
       </div>
     );
