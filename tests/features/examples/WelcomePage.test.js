@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
-import { WelcomePage } from 'src/features/examples/WelcomePage';
+import { WelcomePage } from '../../../src/features/examples/WelcomePage';
 
 describe('examples/WelcomePage', () => {
   it('renders node with correct class name', () => {
@@ -9,12 +8,8 @@ describe('examples/WelcomePage', () => {
       examples: {},
       actions: {},
     };
-    const renderedComponent = shallow(
-      <WelcomePage {...props} />
-    );
+    const renderedComponent = shallow(<WelcomePage {...props} />);
 
-    expect(
-      renderedComponent.find('.examples-welcome-page').getElement()
-    ).to.exist;
+    expect(renderedComponent.find('.examples-welcome-page').length).toBe(1);
   });
 });
