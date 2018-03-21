@@ -28,4 +28,4 @@
 * Install `redux-logger`.
 * Install `lodash`, `babel-plugin-lodash`, `babel-plugin-syntax-dynamic-import`.
 * Add `.babelrc`, remove babel section from package.json.
-* Install `enzyme`, `enzyme-adapter-react-16`, `redux-mock-store`, `nock`.
+* Install `enzyme`, `enzyme-adapter-react-16`, `redux-mock-store`, `nock`, `sinon`.

@@ -15,12 +15,12 @@ export class CounterPage extends Component {
       <div className="examples-counter-page">
         <h1>Counter</h1>
         <p>This is simple counter demo to show how Redux sync actions work.</p>
-        <button onClick={this.props.actions.counterMinusOne} disabled={this.props.examples.count === 0}>
+        <button className="btn-minus-one" onClick={this.props.actions.counterMinusOne} disabled={this.props.examples.count === 0}>
           -
         </button>
         <span>{this.props.examples.count}</span>
-        <button onClick={this.props.actions.counterPlusOne}>+</button>
-        <button onClick={this.props.actions.counterReset} className="btn-reset">
+        <button className="btn-plus-one" onClick={this.props.actions.counterPlusOne}>+</button>
+        <button className="btn-reset" onClick={this.props.actions.counterReset}>
           Reset
         </button>
       </div>
