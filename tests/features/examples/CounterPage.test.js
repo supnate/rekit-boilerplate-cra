@@ -10,7 +10,7 @@ describe('examples/CounterPage', () => {
     };
     const renderedComponent = shallow(<CounterPage {...props} />);
 
-    expect(renderedComponent.find('.examples-counter-page')).toHaveLength(1);
+    expect(renderedComponent.find('.examples-counter-page').length).toBe(1);
   });
 
   it('counter actions are called when buttons clicked', () => {
