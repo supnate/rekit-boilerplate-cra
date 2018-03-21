@@ -1,5 +1,4 @@
-import { expect } from 'chai';
-import reducer from 'src/features/examples/redux/reducer';
+import reducer from '../../../../src/features/examples/redux/reducer';
 
 describe('examples/redux/reducer', () => {
   it('does nothing if no matched action', () => {
@@ -8,7 +7,7 @@ describe('examples/redux/reducer', () => {
       prevState,
       { type: '__UNKNOWN_ACTION_TYPE__' }
     );
-    expect(state).to.equal(prevState);
+    expect(state).toEqual(prevState);
   });
 
   // TODO: add global reducer test if needed.
