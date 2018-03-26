@@ -157,10 +157,6 @@ module.exports = {
             test: /\.less$/,
             loader: 'style-loader!css-loader!less-loader'
           },
-          {
-            test: /\.sass$/,
-            loader: 'style-loader!css-loader!sass-loader'
-          },
           // The notation here is somewhat confusing.
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.

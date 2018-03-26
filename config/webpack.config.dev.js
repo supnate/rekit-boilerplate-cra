@@ -156,10 +156,6 @@ module.exports = {
             test: /\.less$/,
             loader: 'style-loader!css-loader?sourceMap!less-loader?sourceMap'
           },
-          {
-            test: /\.scss$/,
-            loader: 'style-loader!css-loader?sourceMap!sass-loader?sourceMap'
-          },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
           // "style" loader turns CSS into JS modules that inject <style> tags.
