@@ -21,12 +21,13 @@ function postCreate(args) {
   [
     '.travis.yml',
     'yarn.lock',
+    'rekit.md',
     'LICENSE',
   ].forEach(file => fs.unlinkSync(path.join(prjPath, file)));
 
   // Clean package.json
   const pkgJson = require(pkgJsonPath); // eslint-disable-line
-  delete pkgJson.devDependencies['codecov']; // eslint-disable-line
+  delete pkgJson.dependencies['codecov']; // eslint-disable-line
   delete pkgJson.scripts['codecov']; // eslint-disable-line
   fs.writeFileSync(pkgJsonPath, JSON.stringify(pkgJson, null, '  '));
 }

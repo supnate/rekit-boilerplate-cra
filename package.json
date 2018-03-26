@@ -54,6 +54,7 @@
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.1",
     "redux-thunk": "^2.2.0",
+    "rekit-core": "^2.2.5",
     "rekit-studio": "^2.2.6",
     "sass-loader": "^6.0.7",
     "style-loader": "0.19.0",

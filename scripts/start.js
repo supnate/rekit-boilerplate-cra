@@ -32,6 +32,7 @@ const config = require('../config/webpack.config.dev');
 const createDevServerConfig = require('../config/webpackDevServer.config');
 
 const useYarn = fs.existsSync(paths.yarnLockFile);
+process.stdout.isTTY = false;
 const isInteractive = process.stdout.isTTY;
 
 // Warn and crash if required files are missing
