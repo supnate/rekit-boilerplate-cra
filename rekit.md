@@ -7,12 +7,13 @@
 * Create `tools` folder.
 * Intall `rekit-core`, `rekit-studio`, `express-history-api-fallback`.
 * Create the script to start Rekit Studio.
-* Add `start-studio` script to package.json.
+* Add `start-studio` to start.js.
 * Add `rekit` section to package.json, with `{ devPort: 3000, studioPort: 6076, buildPort: 6077, plugins: [], css: 'less' }`.
-* Start Rekit Studio by `npm run start-studio`.
+* Start Rekit Studio by `npm start`.
 * Remove `styles/reset.less` because it conflicts with UI libraries like `ant.design`.
 * Edit `src/index.js` to use Rekit's one.
 * Install `react-hot-loader`, `react-router-dom`, `redux`, `redux-thunk`, `react-redux`, `react-router-redux@next`.
+* Use `package.json.rekit.devPort` for start.js.
 * Should show "Hello Rekit!" at http://localhost:3000 .
 * Copy content of `src/App.js` to `src/features/home/DefaultPage.js`.
 * Move `src/logo.svg` to `src/images/react-logo.svg`.
@@ -29,4 +30,5 @@
 * Install `lodash`, `babel-plugin-lodash`, `babel-plugin-syntax-dynamic-import`.
 * Add `.babelrc`, remove babel section from package.json.
 * Install `enzyme`, `enzyme-adapter-react-16`, `redux-mock-store`, `nock`.
+* Create `postCreate.js` to support `--sass`.
 * Update build.js to use webpack Progress plugin.
