@@ -74,7 +74,6 @@
   "rekit": {
     "devPort": 3000,
     "studioPort": 6076,
-    "buildPort": 6077,
     "plugins": [],
     "css": "less"
   },

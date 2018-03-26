@@ -29,3 +29,4 @@
 * Install `lodash`, `babel-plugin-lodash`, `babel-plugin-syntax-dynamic-import`.
 * Add `.babelrc`, remove babel section from package.json.
 * Install `enzyme`, `enzyme-adapter-react-16`, `redux-mock-store`, `nock`.
+* Update build.js to use webpack Progress plugin.

@@ -18,6 +18,7 @@ const path = require('path');
 const chalk = require('chalk');
 const fs = require('fs-extra');
 const webpack = require('webpack');
+const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const config = require('../config/webpack.config.prod');
 const paths = require('../config/paths');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
@@ -105,6 +106,15 @@ function build(previousFileSizes) {
   console.log('Creating an optimized production build...');
 
   let compiler = webpack(config);
+  let lastPercentage = 0;
+  compiler.apply(new ProgressPlugin((percentage, msg) => {
+    percentage = Math.round(percentage * 10000) / 100;
+    if (/building modules/.test(msg) && percentage - lastPercentage < 8) {
+      return;
+    }
+    lastPercentage = percentage;
+    console.log(percentage + '%', msg);
+  }));
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
       if (err) {
